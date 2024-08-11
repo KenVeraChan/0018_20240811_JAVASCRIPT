@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="desplaza()">
+    <div class="anuncio" style="color:yellow; 
+                                z-index:1; 
+                                float:left; 
+                                width:80%; 
+                                height:100%; 
+                                text-align:center; 
+                                padding-top:15px;
+                                border: solid;
+                                border-color: black;">
+        <canvas id="canvas" style="width:97%; height:97%"></canvas>
+    </div>
+</body>
+<script>
+        var movimiento=0;
+    function desplaza()
+    {
+        var elemento8= document.getElementById("canvas");
+        var elemento7= document.getElementById("canvas").getContext('2d');
+        var movimiento=1;
+        elemento7.fillText("HOLA ",4,10);
+        setInterval(function(){
+            if(movimiento<20)
+            {    
+            elemento7.fillText(" MUNDO",4+20*movimiento,10);
+            movimiento=movimiento+1;
+            }
+        },500);
+    }
+</script>
+</html>
