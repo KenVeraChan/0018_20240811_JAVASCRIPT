@@ -1,0 +1,1 @@
+detector con JavaScript de la inactividad del ratón tras un tiempo determinado. Emerge un mensaje saliente de aviso
