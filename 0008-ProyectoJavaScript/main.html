@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos con JQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <div id="container">
+        <button class="myButton">Rojo</button>
+        <button class="myButton">Amarillo</button>
+        <button class="myButton">Verde</button>
+        <button class="myButton">Azul</button>
+        <button class="myButton">Morado</button>
+        <button class="myButton">Naranja</button>
+        <p class="message">¡IMPORTANTE!</p> 
+        <p class="message">¡IMPORTANTE!</p> 
+        <p class="message">¡IMPORTANTE!</p> 
+        <input type="text" class="fecha" placeholder="Escribe algo...">
+        <input type="text" class="nofecha" placeholder="Escribe algo...">
+        <input type="text" class="fecha" placeholder="Escribe algo...">
+        <button id="resultado">CARGA VISTA</button>
+    </div>
+    <script>
+        /*  Forma 1 de hacer una petición AJAX
+        $.get("test.html", function(data){
+            $("#resultado").append(data);
+        });
+        */
+        /* Forma 2 de hacer una petición AJAX
+        $.get({
+            url: "test.html",
+            dataType: "html",
+            success: function(data) {
+                $("#resultado").append(data);
+            },
+            error: function() {
+                console.error("Error al cargar el contenido.");
+            }
+        })
+        */
+        /* Forma 3 de hacer una petición AJAX */$
+        $.ajax({
+            url: "test.html",
+            type: "GET",
+            dataType: "html",
+            success: function(data) {
+                $("#resultado").append(data);
+            },
+            error: function() {
+                console.error("Error al cargar el contenido.");
+            }
+        });
+    </script>
+</body>
+</html>
